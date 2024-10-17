@@ -1,0 +1,112 @@
+/* 전체 페이지 배경색 */
+body {
+    margin: 0; /* 기본 여백 제거 */
+    background-color: black; /* 전체 배경을 검정색으로 설정 */
+    color: white; /* 텍스트 색상을 흰색으로 설정 */
+    font-family: 'Pretendard-Regular', sans-serif; /* 폰트 적용 */
+    user-select: none; /* 드래그 선택 방지 */
+    -webkit-user-drag: none; /* 드래그 효과 방지 (웹킷 기반 브라우저) */
+}
+
+.arita-title {
+    margin-left: 4.5vw;
+}
+/* 헤더 스타일 */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh; /* 뷰포트 높이의 10% */
+    width: 100%; /* 뷰포트 너비 전체 */
+}
+
+/* 헤더 내부 콘텐츠 스타일 */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%; /* 전체 너비의 70% */
+    padding: 10px 0; /* 상하 여백 */
+}
+
+/* 로고 스타일 */
+.logo {
+    width: 6vw; /* 로고 너비를 뷰포트 너비의 4%로 설정 */
+    height: auto; /* 높이를 비율에 맞게 조정 */
+}
+
+.text1, .text2 {
+    margin: 0 37vw; /* 뷰포트 너비 기준 여백 */
+    font-family: 'Pretendard-Regular', sans-serif;
+    font-size: 1vw; /* 뷰포트 너비 기준 텍스트 크기 */
+    text-align: center;
+}
+
+main {
+    padding-left: 5vw; /* 메인 텍스트도 좌측 정렬 맞춤 */
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    height: 100vh; /* 부모 요소의 높이 */
+    padding: 0;
+    margin: 0;
+}
+
+/* 전체 페이지 배경색 */
+body {
+    margin: 0; /* 기본 여백 제거 */
+    background-color: black; /* 전체 배경을 검정색으로 설정 */
+    color: white; /* 텍스트 색상을 흰색으로 설정 */
+    font-family: 'Pretendard-Regular', sans-serif; /* 폰트 적용 */
+}
+
+/* 피아노 전체 컨테이너 */
+.piano-container {
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: flex-end; /* 아래쪽 정렬 */
+    width: 800px; /* 절대값으로 컨테이너 크기 지정 */
+    height: 200px; /* 원하는 고정 높이 지정 */
+    position: relative; /* 자식 요소의 절대 위치 조정 기준 */
+    background-color: #000; /* 배경색 예시 */
+    box-sizing: border-box;
+    padding: 10px;}
+
+/* 피아노 스타일 */
+.piano {
+    display: flex; /* 플렉스 박스 설정 */
+    top: 100px;
+    position: relative; /* 자식 요소의 절대 위치를 위한 기준 설정 */
+    align-items: flex-end; /* 아래쪽 정렬 */
+}
+
+/* 흰 건반 스타일 */
+.white-key {
+    width: 70px; /* 고정된 가로 길이 */
+    height: auto; /* 원래 비율에 맞춰 자동 조정 */
+    margin: 0 5px; /* 양쪽 여백 추가 (오른쪽 여백만 설정) */
+    object-fit: contain; /* 이미지 비율 유지 */
+    display: block; /* inline 요소가 아니라 block 요소로 설정 */
+    position: relative; /* 부모 기준으로 위치 설정 */
+    bottom: 0px; /* 부모에 대해 아래쪽으로 고정 */
+}
+
+
+/* 검은 건반 스타일 */
+.black-key {
+    position: absolute; /* 절대 위치 설정 */
+    bottom: 0; /* 흰 건반의 아래쪽에 위치 */
+    z-index: 1; /* 흰 건반 위에 표시 */
+    width: 40px; /* 검은 건반 가로 길이 */
+    height: auto; /* 높이는 이미지 비율에 맞춤 */
+}
+
+/* 각 검은 건반 위치 설정 */
+.black-key.b1 { left: calc(60px * 1.0); } /* A#2 */
+.black-key.b2 { left: calc(60px * 3.7); } /* C#3 */
+.black-key.b3 { left: calc(60px * 5); } /* D#3 */
+.black-key.b4 { left: calc(60px * 7.7); } /* F#3 */
+.black-key.b5 { left: calc(60px * 9); } /* G#3 */
+.black-key.b6 { left: calc(60px * 10.3); } /* A#3 */
+.black-key.b7 { left: calc(60px * 13); } /* C#4 */
+.black-key.b8 { left: calc(60px * 14.35); } /* D#4 */
