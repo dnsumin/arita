@@ -100,7 +100,7 @@ body {
 /* 검은 건반 스타일 */
 .black-key {
     position: absolute; /* 절대 위치 설정 */
-    bottom: 0; /* 흰 건반의 아래쪽에 위치 */
+    bottom: -1px; /* 흰 건반의 아래쪽에 위치 */
     z-index: 1; /* 흰 건반 위에 표시 */
     width: 40px; /* 검은 건반 가로 길이 */
     height: auto; /* 높이는 이미지 비율에 맞춤 */
