@@ -6,40 +6,39 @@ body {
     font-family: 'Pretendard-Regular', sans-serif; /* 폰트 적용 */
     user-select: none; /* 드래그 선택 방지 */
     -webkit-user-drag: none; /* 드래그 효과 방지 (웹킷 기반 브라우저) */
+    overflow: hidden; /* 스크롤 제거 */
 }
 
 .arita-title {
-    margin-left: 4.5vw;
+    margin-left: 6vw;
 }
-/* 헤더 스타일 */
 header {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 10vh; /* 뷰포트 높이의 10% */
+    height: 10vh; /* 뷰포트 높이의 15%로 설정 (기존보다 크게) */
     width: 100%; /* 뷰포트 너비 전체 */
 }
 
-/* 헤더 내부 콘텐츠 스타일 */
 .header-content {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 70%; /* 전체 너비의 70% */
-    padding: 10px 0; /* 상하 여백 */
-}
-
-/* 로고 스타일 */
-.logo {
-    width: 6vw; /* 로고 너비를 뷰포트 너비의 4%로 설정 */
-    height: auto; /* 높이를 비율에 맞게 조정 */
+    width: 70%; /* 전체 너비의 90%로 설정 */
+    padding: 10px 0; /* 상하 여백 추가 */
 }
 
 .text1, .text2 {
-    margin: 0 37vw; /* 뷰포트 너비 기준 여백 */
+    margin: 0 37vw;
     font-family: 'Pretendard-Regular', sans-serif;
     font-size: 1vw; /* 뷰포트 너비 기준 텍스트 크기 */
     text-align: center;
+    color: white;
+}
+
+.logo {
+    width: 4.5vw; /* 로고 너비를 뷰포트 너비의 4%로 설정 (기존보다 작게) */
+    height: auto; /* 높이를 비율에 맞게 조정 */
 }
 
 main {
