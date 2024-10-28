@@ -92,6 +92,10 @@ body {
     bottom: 0px; /* 부모에 대해 아래쪽으로 고정 */
 }
 
+/* 클릭 시 보라색으로 바뀌도록 추가 */
+.white-key.active {
+    background-color: purple; /* 클릭 시 보라색 */
+}
 
 /* 검은 건반 스타일 */
 .black-key {

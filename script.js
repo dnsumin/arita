@@ -11,21 +11,19 @@ document.addEventListener('mousedown', () => {
 // 마우스 버튼을 떼었을 때
 document.addEventListener('mouseup', () => {
     isMouseDown = false;
-    // 모든 흰 건반의 opacity 복원
-    resetWhiteKeyOpacity();
+    // 모든 흰 건반의 필터 복원
+    resetWhiteKeyFilter();
 });
 
 // 마우스 이동 이벤트 추가
 document.addEventListener('mousemove', (event) => {
     if (isMouseDown) {
         const target = document.elementFromPoint(event.clientX, event.clientY);
-        if (target && (target.classList.contains('white-key') || target.classList.contains('black-key'))) {
+        if (target && target.classList.contains('white-key')) {
             const sound = target.dataset.sound;
             playSound(sound);
-            // 클릭된 건반의 opacity 줄이기 (흰 건반에만 적용)
-            if (target.classList.contains('white-key')) {
-                setKeyOpacity(target, 0.9); // 원하는 투명도 값으로 설정 (0.0 ~ 1.0)
-            }
+            // 클릭된 건반에 보라색 필터 적용
+            applyKeyFilter(target, true);
         }
     }
 });
@@ -35,17 +33,13 @@ const addKeyClickListener = (key) => {
     key.addEventListener('mousedown', () => {
         const sound = key.dataset.sound;
         playSound(sound); // 사운드 재생 함수 호출
-        // 클릭된 건반의 opacity 줄이기 (흰 건반에만 적용)
-        if (key.classList.contains('white-key')) {
-            setKeyOpacity(key, 0.9); // 원하는 투명도 값으로 설정 (0.0 ~ 1.0)
-        }
+        // 클릭된 건반에 보라색 필터 적용
+        applyKeyFilter(key, true);
     });
 
     // 마우스가 건반에서 떠났을 때
     key.addEventListener('mouseleave', () => {
-        if (key.classList.contains('white-key')) {
-            key.style.opacity = 1; // 흰 건반의 opacity 원래대로 복원
-        }
+        resetKeyFilter(key);
     });
 };
 
@@ -71,12 +65,21 @@ function playSound(soundFile) {
     audio.play();
 }
 
-// 클릭된 건반의 opacity를 줄이는 함수
-function setKeyOpacity(key, opacity) {
-    key.style.opacity = opacity; // opacity 값 설정
+// 클릭된 건반에 보라색 필터를 적용하는 함수
+function applyKeyFilter(key, isActive) {
+    if (isActive) {
+        key.style.filter = 'brightness(0) saturate(100%) invert(25%) sepia(100%) saturate(500%) hue-rotate(230deg) brightness(100%)';
+    }
 }
 
-// 모든 흰 건반의 opacity를 원래대로 돌리는 함수
-function resetWhiteKeyOpacity() {
-    whiteKeys.forEach(key => key.style.opacity = 1); // 흰 건반 opacity 복원
+// 모든 흰 건반의 필터를 원래대로 돌리는 함수
+function resetWhiteKeyFilter() {
+    whiteKeys.forEach(key => {
+        key.style.filter = 'none'; // 필터 복원
+    });
+}
+
+// 개별 건반 필터 복원 함수
+function resetKeyFilter(key) {
+    key.style.filter = 'none'; // 필터 복원
 }
