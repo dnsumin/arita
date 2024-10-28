@@ -34,6 +34,7 @@ header {
     font-size: 1vw; /* 뷰포트 너비 기준 텍스트 크기 */
     text-align: center;
     color: white;
+    text-decoration: none; /* 밑줄 제거 */
 }
 
 .logo {
@@ -64,12 +65,13 @@ body {
     display: flex;
     justify-content: center; /* 가로 중앙 정렬 */
     align-items: flex-end; /* 아래쪽 정렬 */
-    width: 800px; /* 절대값으로 컨테이너 크기 지정 */
-    height: 200px; /* 원하는 고정 높이 지정 */
+    width: 1000px; /* 절대값으로 컨테이너 크기 지정 */
+    height: 250px; /* 원하는 고정 높이 지정 */
     position: relative; /* 자식 요소의 절대 위치 조정 기준 */
     background-color: #000; /* 배경색 예시 */
     box-sizing: border-box;
-    padding: 10px;}
+    padding: 10px;
+    transform: scale(1.5);}
 
 /* 피아노 스타일 */
 .piano {
